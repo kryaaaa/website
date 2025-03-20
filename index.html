@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Домик на канве</title>
-</head>
 <body>
     <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
 
@@ -12,27 +6,26 @@
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
 
-        // Рисуем корпус дома
-        ctx.fillStyle = "#8B4513"; // Цвет дерева
-        ctx.fillRect(150, 200, 200, 200); // x, y, ширина, высота
+        ctx.fillStyle = "yellow"; 
+        ctx.fillRect(150, 200, 200, 200); 
 
-        // Рисуем крышу
+    
         ctx.beginPath();
-        ctx.moveTo(120, 200); // Левый нижний угол
-        ctx.lineTo(250, 100); // Вершина крыши
-        ctx.lineTo(380, 200); // Правый нижний угол
+        ctx.moveTo(120, 200); 
+        ctx.lineTo(250, 100); 
+        ctx.lineTo(380, 200); 
         ctx.closePath();
-        ctx.fillStyle = "#D2691E"; // Цвет крыши
+        ctx.fillStyle = "red";
         ctx.fill();
 
-        // Рисуем окна
-        ctx.fillStyle = "#FFFFFF"; // Цвет окон
-        ctx.fillRect(180, 240, 40, 40); // Левое окно
-        ctx.fillRect(280, 240, 40, 40); // Правое окно
+    
+        ctx.fillStyle = "blue"; 
+        ctx.fillRect(180, 240, 40, 40);
+        ctx.fillRect(280, 240, 40, 40); 
 
-        // Рисуем дверь
-        ctx.fillStyle = "#8B4513"; // Цвет двери
-        ctx.fillRect(230, 320, 40, 80); // Дверь
+        
+        ctx.fillStyle = "purple";
+        ctx.fillRect(230, 320, 40, 80); 
 
         // Рисуем трубу
         ctx.fillStyle = "#A52A2A"; // Цвет трубы
