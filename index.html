@@ -1,15 +1,42 @@
-<canvas id="canv" width="300" height="300"></canvas>
-<script>
-    const canv = document.getElementById('canv');
-    const ctx = canv.getContext('2d');
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домик на канве</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
 
-    function draw(w, h) {
-        for (let i = 0; i < w; i++) {
-            for (let j = 0; j < h; j++) {
-                ctx.fillRect(20*i, 20*j, 10, 10);
-            }
-        }
-    }
-    draw(10, 4);
-    
-</script>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Рисуем корпус дома
+        ctx.fillStyle = "#8B4513"; // Цвет дерева
+        ctx.fillRect(150, 200, 200, 200); // x, y, ширина, высота
+
+        // Рисуем крышу
+        ctx.beginPath();
+        ctx.moveTo(120, 200); // Левый нижний угол
+        ctx.lineTo(250, 100); // Вершина крыши
+        ctx.lineTo(380, 200); // Правый нижний угол
+        ctx.closePath();
+        ctx.fillStyle = "#D2691E"; // Цвет крыши
+        ctx.fill();
+
+        // Рисуем окна
+        ctx.fillStyle = "#FFFFFF"; // Цвет окон
+        ctx.fillRect(180, 240, 40, 40); // Левое окно
+        ctx.fillRect(280, 240, 40, 40); // Правое окно
+
+        // Рисуем дверь
+        ctx.fillStyle = "#8B4513"; // Цвет двери
+        ctx.fillRect(230, 320, 40, 80); // Дверь
+
+        // Рисуем трубу
+        ctx.fillStyle = "#A52A2A"; // Цвет трубы
+        ctx.fillRect(270, 120, 30, 60); // Труба
+    </script>
+</body>
+</html>
